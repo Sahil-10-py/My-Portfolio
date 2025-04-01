@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 20px auto; padding: 30px; background-color: #fdfdfd; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
+    <!-- Personal Information Section -->
+    <h3 style="font-size: 2rem; color: #4CAF50; margin-bottom: 20px; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; text-align: center;">Personal Information</h3>
+    {% if a %}
+        {% for port in a %}
+            <ul style="list-style-type: none; padding: 0; margin: 0;">
+                <li style="font-size: 1.4rem; color: #333; margin-bottom: 15px;">
+                    <strong style="color: #4CAF50;">Name:</strong> {{ port.name }}
+                </li>
+                <li style="font-size: 1.4rem; color: #333; margin-bottom: 15px;">
+                    <strong style="color: #4CAF50;">Date of Birth:</strong> {{ port.dob }}
+                </li>
+                <li style="font-size: 1.4rem; color: #333; margin-bottom: 15px;">
+                    <strong style="color: #4CAF50;">Email:</strong> {{ port.gmail }}
+                </li>
+                <li style="font-size: 1.4rem; color: #333; margin-bottom: 15px;">
+                    <strong style="color: #4CAF50;">Phone:</strong> {{ port.phone }}
+                </li>
+                <li style="font-size: 1.4rem; color: #333; margin-bottom: 15px;">
+                    <strong style="color: #4CAF50;">City:</strong> {{ port.city }}
+                </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p style="font-size: 1.4rem; color: #999; text-align: center;">No personal information available.</p>
+    {% endif %}
+
+    <!-- Languages Section -->
+    <h3 style="font-size: 2rem; color: #4CAF50; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; text-align: center;">Languages</h3>
+    <ul style="list-style-type: none; padding: 0; margin: 0; text-align: center;">
+        <li style="font-size: 1.4rem; color: #333; margin-bottom: 10px;">English</li>
+        <li style="font-size: 1.4rem; color: #333; margin-bottom: 10px;">Hindi</li>
+        <li style="font-size: 1.4rem; color: #333; margin-bottom: 10px;">Marathi</li>
+    </ul>
+</div>
+
+{% endblock %}

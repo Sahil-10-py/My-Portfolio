@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<img src="{% static 'img/profile.png' %}" alt="Portfolio Image"  style="width: 200px; height: 200px; margin: 20px auto; border-radius: 50%; border: 3px solid #4CAF50;">
+
+
+
+{% for port in a %}
+    <h1 style="font-size: 50px; color: #333; font-weight: bold; margin-bottom: 10px;">{{ port.name }}</h1>
+    <p style="font-size: 30px; color: #555; margin-bottom: 0;">{{ port.course }}</p>
+{% endfor %}
+
+
+{% endblock %}

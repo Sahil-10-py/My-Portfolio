@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: center; font-size: 2.8rem; color: #4CAF50; font-weight: bold; margin-bottom: 30px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);">Biography</h1>
+
+<div style="max-width: 900px; margin: 0 auto; padding: 25px; background-color: #fdfdfd; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
+    {% if a %}
+        {% for port in a %}
+            <div class="biography-item" style="margin-bottom: 25px; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #ffffff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);">
+                <p style="font-size: 1.4rem; color: #333; line-height: 1.8; text-align: justify; margin: 0;">
+                    {{ port.biography }}
+                </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p style="font-size: 1.4rem; color: #999; text-align: center; margin-top: 20px;">No biographies available at the moment.</p>
+    {% endif %}
+</div>
+
+
+{% endblock %}

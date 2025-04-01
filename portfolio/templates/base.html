@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfoli</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav div {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fda085;
+        }
+
+        .content {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 10px;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 0.9rem;
+            box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer span {
+            font-weight: bold;
+            color: #fda085;
+        }
+
+        /* Add animations */
+        nav a, footer {
+            animation: fadeIn 2s ease;
+        }
+
+        .content {
+            animation: slideUp 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/home/">Home</a>
+            <a href="/bio/">Biography</a>
+            <a href="/info/">Personal_info</a>
+            <a href="/projects/">Projects</a>
+        </div>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        © 2025 My Portfolio
+    </footer>
+</body>
+</html>
